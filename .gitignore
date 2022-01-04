@@ -96,4 +96,8 @@ modules.xml
 
 # End of https://www.toptal.com/developers/gitignore/api/WEBSTORM+ALL
 
+# npm stuff
+node_modules
+
+# text container provided by the exam
 wsp2_projekt_studienarbeit_webseite_texte.txt

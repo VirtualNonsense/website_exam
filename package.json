@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "chart.js": "^3.7.0",
+    "node-sass": "^7.0.1",
+    "sass": "^1.45.2"
+  },
+  "scripts": {
+    "build_custom_scss": "sass scss/wsp2_projektarbeit_andreas_nachtmann.scss:css/wsp2_projektarbeit_andreas_nachtmann.css"
+  }
+}
