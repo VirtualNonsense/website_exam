@@ -1,4 +1,7 @@
 @charset "utf-8";
+
+
+$blockquote_side_padding: 5%;
 /* CSS-Dokument zu wsp2_projektarbeit_vorname_nachname.html von Name Vorname */
 
 p {
@@ -18,6 +21,17 @@ figure {
 }
 
 article {
+}
+
+q{
+  font-style: italic;
+}
+
+blockquote{
+  padding-left: $blockquote_side_padding !important;
+  padding-right: $blockquote_side_padding !important;
+  text-align: justify;
+  font-style: italic;
 }
 
 
