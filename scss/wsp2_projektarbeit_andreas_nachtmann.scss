@@ -12,7 +12,22 @@ p {
 li{
   text-align: justify-all;
 }
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #87ceeb;
+}
 
+.carousel:hover .overlay {
+  opacity: 40%;
+}
 img {
   width: 100%;
 }
