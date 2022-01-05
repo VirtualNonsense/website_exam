@@ -21,6 +21,7 @@ figure {
 }
 
 article {
+  padding: 20px;
 }
 
 q{
@@ -34,6 +35,9 @@ blockquote{
   font-style: italic;
 }
 
+main{
+  padding: 0 !important;
+}
 
 // #####################################################################################################################
 // break points
@@ -91,18 +95,25 @@ blockquote{
   .col-5{
   }
   .col-6{
+    width: 100%;
   }
   .col-7{
+    width: 100%;
   }
   .col-8{
+    width: 100%;
   }
   .col-9{
+    width: 100%;
   }
   .col-10{
+    width: 100%;
   }
   .col-11{
+    width: 100%;
   }
   .col-12{
+    width: 100%;
   }
 
 }
