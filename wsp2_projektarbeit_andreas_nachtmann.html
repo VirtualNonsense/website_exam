@@ -327,7 +327,7 @@
         <h1 class="col-12" id="PC-Zubehör_landet_bei_12_Prozent_der_Deutschen_im_Hausmüll">
             PC-Zubehör landet bei 12 Prozent der Deutschen im Hausmüll
         </h1>
-        <div class="accordion" id="accordionExample">
+        <div class="accordion" id="accordionExample"  onclick="play_accordion_music()">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse"
@@ -380,6 +380,14 @@
                 </div>
             </div>
         </div>
+
+        <script>
+            function play_accordion_music() {
+                var audio = document.getElementById("audio");
+                audio.play();
+            }
+        </script>
+        <audio id="audio" src="https://www.hoerspielbox.de/wp-content/blogs.dir/sites/1/1-5-10035.mp3?_=1"></audio>
     </article>
 
     <article class="row justify-content-center">
