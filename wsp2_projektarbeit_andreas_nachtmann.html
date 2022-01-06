@@ -24,10 +24,14 @@
     <!-- Bootstrap js-->
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
     <script src="node_modules/chart.js/dist/chart.min.js"></script>
+    <script src="node_modules/chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.min.js"></script>
 
     <script defer src="node_modules/@fortawesome/fontawesome-free/js/brands.js"></script>
     <script defer src="node_modules/@fortawesome/fontawesome-free/js/solid.js"></script>
     <script defer src="node_modules/@fortawesome/fontawesome-free/js/fontawesome.js"></script>
+
+    <!-- custom js-->
+    <script src="js/wsp2_projektarbeit_andreas_nachtmann.js"></script>
 
 </head>
 
@@ -235,6 +239,15 @@
             auf die Digitalisierung schneller und konsequenter in Richtung regenerativer Energiequellen vorantreiben</q>,
             betont Rohleder. Das sehen auch die meisten Deutschen so: 9 von 10 Bundesbürgerinnen und Bundesbürgern (90
             Prozent) fordern einen schnellen Ausbau erneuerbarer Energien.
+        </p>
+        <p class="col-6 chart-container">
+            <canvas id="c_maßnahmen_ueber_prozent">
+
+            </canvas>
+            <script>
+                const ctx = document.getElementById('c_maßnahmen_ueber_prozent').getContext('2d');
+                chart = get_massnahmen_ueber_prozent(ctx);
+            </script>
         </p>
     </article>
     <article class="row justify-content-center">
