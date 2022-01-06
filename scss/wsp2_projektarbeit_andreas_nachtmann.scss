@@ -35,10 +35,6 @@ img {
 figure {
 }
 
-article {
-  padding-left: 50px;
-  padding-right: 50px;
-}
 
 q{
   font-style: italic;
@@ -51,8 +47,10 @@ blockquote{
   font-style: italic;
 }
 
-main{
-  padding: 0 !important;
+main {
+  padding-top: 30px !important;
+  padding-right: 50px !important;
+  padding-left: 50px !important;
 }
 
 .fab {
