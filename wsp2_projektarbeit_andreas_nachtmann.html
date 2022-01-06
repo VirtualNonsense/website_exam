@@ -241,13 +241,39 @@
             Prozent) fordern einen schnellen Ausbau erneuerbarer Energien.
         </p>
         <p class="col-6 chart-container">
-            <canvas id="c_maßnahmen_ueber_prozent">
-
+            <canvas id="c_maßnahmen_ueber_prozent" height="80vh" width="80vw">
             </canvas>
             <script>
                 const ctx = document.getElementById('c_maßnahmen_ueber_prozent').getContext('2d');
                 chart = get_massnahmen_ueber_prozent(ctx);
             </script>
+        </p>
+        <section class="col-6 row">
+            <p class="col-12 chart-container">
+                <canvas id="c_usage_as_long">
+
+                </canvas>
+                <script>
+                    get_demography_over_percentage(
+                        document.getElementById('c_usage_as_long').getContext('2d'),
+                        [58, 75, 76, 82],
+                        ["verwendung von Geräten so lange wie möglich statt Neukauf"]);
+                </script>
+            </p>
+            <p class="col-12 chart-container">
+                <canvas id="c_energy_saving">
+
+                </canvas>
+                <script>
+                    get_demography_over_percentage(
+                        document.getElementById('c_energy_saving').getContext('2d'),
+                        [57, 48, 44, 30],
+                        ["Aktivierung der Energieapr-Funktion bei Laptops / Monitoren"]);
+                </script>
+            </p>
+        </section>
+        <p class="col-12">
+            Quelle: <a href="https://www.bitkom.org/Presse/Presseinformation/Wunsch-mehr-digitaler-Umweltschutz">www.bitkom.org</a>
         </p>
     </article>
     <article class="row justify-content-center">

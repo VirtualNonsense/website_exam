@@ -11,9 +11,25 @@ const massnahmen = [
 
 ];
 
+function datalabel_formatter(context) {
+    const avgSize = Math.round((context.chart.height + context.chart.width) / 2);
+    let size = Math.round(avgSize / 32);
+    size = size > 12? 12 : size;
+    return {
+        size: size,
+        weight: 'bold'
+    };
+}
+
+function percent_formatter(value) {
+    return value + '%';
+}
+
 function get_massnahmen_ueber_prozent(context) {
 
     return new Chart(context, {
+        responsive:true,
+        maintainAspectRatio: false,
         type: 'bar', data: {
             labels: massnahmen, datasets: [{
                 label: 'Nutze ich bereits',
@@ -54,20 +70,50 @@ function get_massnahmen_ueber_prozent(context) {
             indexAxis: "y",
             plugins: {
                 datalabels: {
-                    font: function (context) {
-                        const avgSize = Math.round((context.chart.height + context.chart.width) / 2);
-                        let size = Math.round(avgSize / 32);
-                        size = size > 12? 12 : size;
-                        return {
-                            size: size,
-                            weight: 'bold'
-                        };
-                    },
+                    font: (context) => datalabel_formatter(context),
                     anchor: 'end',
                     align: 'end',
-                    formatter: function(value) {
-                        return value + '%';
+                    formatter: (value) => percent_formatter(value)
+                }
+            }
+        },
+    });
+}
+
+function get_demography_over_percentage(context, data, label) {
+    return new Chart(context, {
+        type: 'bar', data: {
+            labels: demographie, datasets: [{
+                label: label,
+                data: data,
+                backgroundColor: ['rgb(23,154,215)',],
+                borderColor: ['rgb(23,154,215)',],
+                borderWidth: 1
+            }],
+        }, options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                },
+                x: {
+                    min: 0,
+                    max: 100,
+
+                    ticks: {
+                        // Include a dollar sign in the ticks
+                        callback: function(value) {
+                            return `${value}%`;
+                        }
                     }
+                }
+            },
+            indexAxis: "y",
+            plugins: {
+                datalabels: {
+                    font: (context) => datalabel_formatter(context),
+                    anchor: 'end',
+                    align: 'end',
+                    formatter: (value) => percent_formatter(value)
                 }
             }
         },
