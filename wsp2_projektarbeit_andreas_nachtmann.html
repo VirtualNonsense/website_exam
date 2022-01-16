@@ -235,44 +235,76 @@
             betont Rohleder. Das sehen auch die meisten Deutschen so: 9 von 10 Bundesbürgerinnen und Bundesbürgern (90
             Prozent) fordern einen schnellen Ausbau erneuerbarer Energien.
         </p>
-        <p class="col-6 chart-container">
-            <canvas id="c_maßnahmen_ueber_prozent" height="79vh" width="80vw">
+        <!--xl graphs-------------------------------------------------------------------------------------------------->
+        <p class="d-none d-xl-block col-6 chart-container">
+            <!-- svg element?-->
+            <canvas id="c_maßnahmen_ueber_prozent_xl" class="" height="79vh" width="80vw">
             </canvas>
         </p>
+        <section class="d-none d-xl-block col-6 row">
+            <p class="col-12 chart-container">
+                <canvas id="c_usage_as_long_xl">
+
+                </canvas>
+            </p>
+            <p class="col-12 chart-container">
+                <canvas id="c_energy_saving_xl">
+                </canvas>
+            </p>
+        </section>
+        <!--default graphs--------------------------------------------------------------------------------------------->
+        <p class="d-xl-none col-12 chart-container">
+            <!-- svg element?-->
+            <canvas id="c_maßnahmen_ueber_prozent" class="">
+            </canvas>
+        </p>
+        <p class="d-xl-none col-12 chart-container">
+            <canvas id="c_usage_as_long">
+
+            </canvas>
+        </p>
+        <p class="d-xl-none col-12 chart-container">
+            <canvas id="c_energy_saving">
+            </canvas>
+        </p>
+        <!--js for graphs--------------------------------------------------------------------------------------------->
         <script>
-            const ctx = document.getElementById('c_maßnahmen_ueber_prozent').getContext('2d');
+            let ctx = document.getElementById('c_maßnahmen_ueber_prozent').getContext('2d');
+            chart = get_massnahmen_ueber_prozent(ctx);
+            ctx = document.getElementById('c_maßnahmen_ueber_prozent_xl').getContext('2d');
             chart = get_massnahmen_ueber_prozent(ctx);
         </script>
         <noscript>Your browser does not support JavaScript!</noscript>
-        <section class="col-6 row">
-            <p class="col-12 chart-container">
-                <canvas id="c_usage_as_long">
-
-                </canvas>
-            </p>
-            <script>
-                get_demography_over_percentage(
-                    document.getElementById('c_usage_as_long').getContext('2d'),
-                    [58, 75, 76, 82],
-                    ["verwendung von Geräten so lange wie möglich statt Neukauf"]);
-            </script>
-            <noscript>Your browser does not support JavaScript!</noscript>
-            <p class="col-12 chart-container">
-                <canvas id="c_energy_saving">
-
-                </canvas>
-            </p>
-            <script>
-                get_demography_over_percentage(
-                    document.getElementById('c_energy_saving').getContext('2d'),
-                    [57, 48, 44, 30],
-                    ["Aktivierung der Energieapr-Funktion bei Laptops / Monitoren"]);
-            </script>
-            <noscript>Your browser does not support JavaScript!</noscript>
-        </section>
-        <p class="col-12">
+        <script>
+            let usage_data = [58, 75, 76, 82];
+            let usage_label = ["verwendung von Geräten so lange wie möglich statt Neukauf"];
+            get_demography_over_percentage(
+                document.getElementById('c_usage_as_long').getContext('2d'),
+                usage_data,
+                usage_label);
+            get_demography_over_percentage(
+                document.getElementById('c_usage_as_long_xl').getContext('2d'),
+                usage_data,
+                usage_label);
+        </script>
+        <noscript>Your browser does not support JavaScript!</noscript>
+        <script>
+            let savings_data = [57, 48, 44, 30];
+            let savings_label = ["Aktivierung der Energieapr-Funktion bei Laptops / Monitoren"];
+            get_demography_over_percentage(
+                document.getElementById('c_energy_saving').getContext('2d'),
+                savings_data,
+                savings_label);
+            get_demography_over_percentage(
+                document.getElementById('c_energy_saving_xl').getContext('2d'),
+                savings_data,
+                savings_label);
+        </script>
+        <noscript>Your browser does not support JavaScript!</noscript>
+        <!------------------------------------------------------------------------------------------------------------->
+        <footer class="col-12">
             Quelle: <a href="https://www.bitkom.org/Presse/Presseinformation/Wunsch-mehr-digitaler-Umweltschutz">www.bitkom.org</a>
-        </p>
+        </footer>
     </article>
     <article class="row justify-content-center">
         <h1 class="col-12" id="Das_Internet_ist_für_junge_Menschen_unverzichtbar">
